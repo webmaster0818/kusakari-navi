@@ -70,13 +70,13 @@ export default function RegularRankingPage() {
           <h2 className="text-lg font-bold text-gray-800 mb-4">定期管理契約のメリット</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             {[
-              { icon: "", title: "費用が割安", desc: "単発依頼より1回あたりの費用が安くなることが多い" },
-              { icon: "️", title: "管理の手間が省ける", desc: "スケジュールを業者に管理してもらえる" },
-              { icon: "", title: "草を短くキープ", desc: "伸びすぎる前に対応するため費用・手間を節約" },
-              { icon: "", title: "優先対応", desc: "繁忙期でも優先的に対応してもらいやすい" },
+              { iconEl: <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="9"/><text x="12" y="16" textAnchor="middle" fill="currentColor" stroke="none" fontSize="10" fontWeight="bold">¥</text></svg>, title: "費用が割安", desc: "単発依頼より1回あたりの費用が安くなることが多い" },
+              { iconEl: <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>, title: "管理の手間が省ける", desc: "スケジュールを業者に管理してもらえる" },
+              { iconEl: <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>, title: "草を短くキープ", desc: "伸びすぎる前に対応するため費用・手間を節約" },
+              { iconEl: <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>, title: "優先対応", desc: "繁忙期でも優先的に対応してもらいやすい" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
-                <span className="text-xl">{item.icon}</span>
+                {item.iconEl}
                 <div>
                   <div className="font-bold text-gray-800">{item.title}</div>
                   <div className="text-gray-600 text-xs">{item.desc}</div>
