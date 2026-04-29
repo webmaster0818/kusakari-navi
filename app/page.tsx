@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -25,31 +26,58 @@ const faqs = [
   { q: "DIYと業者どちらがいい？", a: "30平方メートル以下の庭ならDIYも選択肢。それ以上の面積や急傾斜・空き地の場合は業者への依頼が効率的です。道具代・時間・体力を考慮して判断を。" },
 ];
 
+const rankColors = [
+  { border: "border-yellow-400", badge: "bg-yellow-400", rank: "text-yellow-400", label: "No.1 編集部イチオシ" },
+  { border: "border-gray-300", badge: "bg-gray-400", rank: "text-gray-400", label: "No.2" },
+  { border: "border-amber-600", badge: "bg-amber-600", rank: "text-amber-600", label: "No.3" },
+];
+
 export default function HomePage() {
   return (
     <>
       <SiteHeader />
       <main>
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-green-800 to-green-600 text-white py-16 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-yellow-300 font-bold text-sm mb-3 tracking-widest uppercase">草刈り業者の総合比較サイト</p>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+        {/* Hero — full-width background image with green gradient overlay */}
+        <section className="relative overflow-hidden min-h-[520px] md:min-h-[600px] flex items-center">
+          {/* Background image */}
+          <Image
+            src="/images/hero-a.png"
+            alt="きれいに整備された芝生と青空"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Green gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(22,163,74,0.82) 0%, rgba(21,128,61,0.70) 50%, rgba(20,83,45,0.60) 100%)",
+            }}
+          />
+          {/* Content */}
+          <div className="relative z-10 w-full max-w-4xl mx-auto text-center px-4 py-20">
+            <p className="text-yellow-300 font-bold text-xs md:text-sm mb-3 tracking-widest uppercase drop-shadow">
+              草刈り業者の総合比較サイト
+            </p>
+            <h1 className="text-4xl md:text-6xl font-black mb-5 leading-tight text-white drop-shadow-lg">
               庭の雑草、もう悩まない。
             </h1>
-            <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-              全国対応の草刈り・除草業者を徹底比較。料金相場・口コミ・ランキングで最適な業者を見つけましょう。
+            <p className="text-green-100 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
+              全国対応の草刈り・除草業者を徹底比較。<br className="hidden sm:block" />
+              料金相場・口コミ・ランキングで最適な業者を見つけましょう。
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/ranking/"
-                className="bg-accent hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg"
+                className="bg-accent hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
               >
                 🏆 おすすめランキングを見る
               </Link>
               <Link
                 href="/cost/price/"
-                className="bg-white text-primary hover:bg-green-50 px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg"
+                className="bg-white/95 text-primary hover:bg-white px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
               >
                 💰 料金相場を確認する
               </Link>
@@ -58,18 +86,23 @@ export default function HomePage() {
         </section>
 
         {/* Scene nav */}
-        <section className="py-10 px-4 bg-white">
+        <section className="py-12 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">シーン別草刈りガイド</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">シーン別草刈りガイド</h2>
+            <p className="text-gray-500 text-sm text-center mb-8">お悩みのシーンから探す</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
               {scenes.map((scene) => (
                 <Link
                   key={scene.slug}
                   href={`/scene/${scene.slug}/`}
-                  className="flex flex-col items-center p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors border border-green-200 text-center"
+                  className="group flex flex-col items-center p-5 bg-green-50 hover:bg-primary rounded-2xl transition-all duration-200 border border-green-200 hover:border-primary text-center shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
-                  <span className="text-3xl mb-2">{scene.icon}</span>
-                  <span className="font-medium text-sm text-gray-700">{scene.label}</span>
+                  <span className="text-4xl mb-2 transition-transform duration-200 group-hover:scale-110">
+                    {scene.icon}
+                  </span>
+                  <span className="font-semibold text-sm text-gray-700 group-hover:text-white transition-colors">
+                    {scene.label}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -77,41 +110,71 @@ export default function HomePage() {
         </section>
 
         {/* TOP3 */}
-        <section className="py-12 px-4 bg-bg">
+        <section className="py-14 px-4 bg-bg">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">🏆 おすすめ草刈り業者 TOP3</h2>
-            <p className="text-gray-500 text-sm text-center mb-8">料金・対応エリア・口コミを総合評価</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">🏆 おすすめ草刈り業者 TOP3</h2>
+            <p className="text-gray-500 text-sm text-center mb-10">料金・対応エリア・口コミを総合評価</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {top3Companies.map((company, index) => (
-                <div key={company.slug} className={`bg-white rounded-2xl shadow-md p-6 border-2 ${index === 0 ? 'border-yellow-400' : 'border-transparent'} relative`}>
-                  {index === 0 && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      ★ No.1 編集部イチオシ
-                    </div>
-                  )}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className={`text-3xl font-black ${index === 0 ? 'text-yellow-400' : index === 1 ? 'text-gray-400' : 'text-yellow-600'}`}>
-                      {index + 1}位
+                <div
+                  key={company.slug}
+                  className={`bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 ${rankColors[index].border} relative flex flex-col hover:-translate-y-1`}
+                >
+                  {/* Rank badge */}
+                  <div
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 ${rankColors[index].badge} text-white text-xs font-bold px-4 py-1.5 rounded-full shadow whitespace-nowrap`}
+                  >
+                    ★ {rankColors[index].label}
+                  </div>
+
+                  {/* Rank number + name */}
+                  <div className="flex items-center gap-3 mb-3 mt-1">
+                    <span
+                      className={`text-4xl font-black leading-none ${rankColors[index].rank}`}
+                    >
+                      {index + 1}
                     </span>
-                    <h3 className="text-lg font-bold text-gray-800">{company.name}</h3>
+                    <div>
+                      <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-widest">Rank</p>
+                      <h3 className="text-lg font-bold text-gray-800 leading-tight">{company.name}</h3>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-600 mb-3">{company.tagline}</p>
-                  <p className="text-xs text-gray-500 mb-4 line-clamp-2">{company.description}</p>
-                  <div className="flex justify-between items-center mb-4 text-sm">
-                    <span className="text-primary font-bold">¥{company.pricePerSqm}/㎡〜</span>
-                    <span className="text-gray-500 text-xs">{company.coverage}</span>
+
+                  <p className="text-sm font-semibold text-gray-700 mb-1">{company.tagline}</p>
+                  <p className="text-xs text-gray-500 mb-4 leading-relaxed line-clamp-2 flex-1">
+                    {company.description}
+                  </p>
+
+                  {/* Price + coverage */}
+                  <div className="flex justify-between items-center bg-green-50 rounded-xl px-3 py-2 mb-4 text-sm">
+                    <div>
+                      <span className="text-[10px] text-gray-400 block">料金目安</span>
+                      <span className="text-primary font-bold">¥{company.pricePerSqm}/㎡〜</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[10px] text-gray-400 block">対応エリア</span>
+                      <span className="text-gray-600 text-xs font-medium">{company.coverage}</span>
+                    </div>
                   </div>
+
                   <Link
                     href={`/company/${company.slug}/`}
-                    className="block w-full text-center bg-primary hover:bg-green-700 text-white py-2 rounded-lg text-sm font-bold transition-colors"
+                    className={`block w-full text-center py-2.5 rounded-xl text-sm font-bold transition-all ${
+                      index === 0
+                        ? "bg-primary hover:bg-green-700 text-white shadow hover:shadow-md"
+                        : "bg-green-50 hover:bg-green-100 text-primary border border-primary"
+                    }`}
                   >
-                    詳しく見る
+                    詳しく見る →
                   </Link>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-6">
-              <Link href="/ranking/" className="text-primary hover:underline font-medium">
+            <div className="text-center mt-8">
+              <Link
+                href="/ranking/"
+                className="inline-flex items-center gap-2 text-primary hover:text-green-700 font-semibold hover:underline text-sm"
+              >
                 全業者のランキングを見る →
               </Link>
             </div>
@@ -119,17 +182,18 @@ export default function HomePage() {
         </section>
 
         {/* Cost table */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-14 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">💰 草刈り料金相場一覧</h2>
-            <div className="overflow-x-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">💰 草刈り料金相場一覧</h2>
+            <p className="text-gray-500 text-sm text-center mb-8">面積別の費用目安（2026年最新版）</p>
+            <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="bg-primary text-white">
-                    <th className="px-4 py-3 text-left">面積</th>
-                    <th className="px-4 py-3 text-right">最安値</th>
-                    <th className="px-4 py-3 text-right">目安</th>
-                    <th className="px-4 py-3 text-right">高め</th>
+                    <th className="px-5 py-3.5 text-left font-semibold rounded-tl-2xl">面積</th>
+                    <th className="px-5 py-3.5 text-right font-semibold">最安値</th>
+                    <th className="px-5 py-3.5 text-right font-semibold">目安</th>
+                    <th className="px-5 py-3.5 text-right font-semibold rounded-tr-2xl">高め</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -139,19 +203,21 @@ export default function HomePage() {
                     { area: "100〜300㎡（大きな空き地）", low: "¥20,000", mid: "¥50,000", high: "¥90,000" },
                     { area: "300㎡以上（田畑・太陽光）", low: "¥40,000", mid: "¥100,000", high: "¥200,000" },
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-green-50" : "bg-white"}>
-                      <td className="px-4 py-3 font-medium text-gray-700">{row.area}</td>
-                      <td className="px-4 py-3 text-right text-green-700 font-bold">{row.low}</td>
-                      <td className="px-4 py-3 text-right text-gray-700">{row.mid}</td>
-                      <td className="px-4 py-3 text-right text-gray-500">{row.high}</td>
+                    <tr key={i} className={`${i % 2 === 0 ? "bg-green-50" : "bg-white"} hover:bg-green-100 transition-colors`}>
+                      <td className="px-5 py-3.5 font-medium text-gray-700">{row.area}</td>
+                      <td className="px-5 py-3.5 text-right text-primary font-bold">{row.low}</td>
+                      <td className="px-5 py-3.5 text-right text-gray-700">{row.mid}</td>
+                      <td className="px-5 py-3.5 text-right text-gray-400">{row.high}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-500 mt-3 text-center">※目安です。草の高さ・廃棄物量・地域によって変動します。</p>
-            <div className="text-center mt-4">
-              <Link href="/cost/price/" className="text-primary hover:underline font-medium">
+            <p className="text-xs text-gray-400 mt-3 text-center">
+              ※目安です。草の高さ・廃棄物量・地域によって変動します。
+            </p>
+            <div className="text-center mt-5">
+              <Link href="/cost/price/" className="inline-flex items-center gap-1 text-primary hover:underline font-semibold text-sm">
                 詳しい料金ガイドを見る →
               </Link>
             </div>
@@ -159,18 +225,27 @@ export default function HomePage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 px-4 bg-bg">
+        <section className="py-14 px-4 bg-bg">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">よくある質問</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">よくある質問</h2>
+            <p className="text-gray-500 text-sm text-center mb-10">草刈りに関するお悩みにお答えします</p>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl shadow-sm p-5">
-                  <h3 className="font-bold text-gray-800 mb-2 flex gap-2">
-                    <span className="text-primary">Q.</span>
-                    {faq.q}
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-5 md:p-6 border border-gray-50"
+                >
+                  <h3 className="font-bold text-gray-800 mb-3 flex gap-3 items-start">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center mt-0.5">
+                      Q
+                    </span>
+                    <span className="leading-snug">{faq.q}</span>
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed pl-6">
-                    <span className="text-secondary font-bold">A.</span> {faq.a}
+                  <p className="text-gray-600 text-sm leading-relaxed flex gap-3 items-start pl-0">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-green-100 text-primary text-xs font-black flex items-center justify-center mt-0.5">
+                      A
+                    </span>
+                    <span>{faq.a}</span>
                   </p>
                 </div>
               ))}
@@ -179,13 +254,15 @@ export default function HomePage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 px-4 bg-accent text-white">
+        <section className="py-14 px-4 bg-accent text-white">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-3">今すぐ無料で見積もりを取る</h2>
-            <p className="text-red-100 mb-6">複数業者の見積もりを比較して、最安値の業者を見つけましょう</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">今すぐ無料で見積もりを取る</h2>
+            <p className="text-red-100 mb-8 text-sm md:text-base">
+              複数業者の見積もりを比較して、最安値の業者を見つけましょう
+            </p>
             <Link
               href="/ranking/"
-              className="bg-white text-accent hover:bg-red-50 px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg inline-block"
+              className="bg-white text-accent hover:bg-red-50 px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 inline-block"
             >
               🏆 おすすめ業者ランキングへ
             </Link>
