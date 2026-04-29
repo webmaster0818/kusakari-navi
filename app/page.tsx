@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 const top3Companies = companiesData.slice(0, 3);
 const scenes = [
-  { slug: "garden", label: "庭・自宅", icon: "" },
-  { slug: "vacant-lot", label: "空き地", icon: "" },
-  { slug: "vacant-house", label: "空き家", icon: "️" },
-  { slug: "apartment", label: "アパート", icon: "" },
-  { slug: "solar", label: "太陽光発電", icon: "️" },
+  { slug: "garden", label: "庭・自宅", iconSrc: "/images/icon-house.png" },
+  { slug: "vacant-lot", label: "空き地", iconSrc: "/images/icon-vacant-lot.png" },
+  { slug: "vacant-house", label: "空き家", iconSrc: "/images/icon-vacant-house.png" },
+  { slug: "apartment", label: "アパート", iconSrc: "/images/icon-apartment.png" },
+  { slug: "solar", label: "太陽光発電", iconSrc: "/images/icon-solar.png" },
 ];
 
 const faqs = [
@@ -97,8 +97,8 @@ export default function HomePage() {
                   href={`/scene/${scene.slug}/`}
                   className="group flex flex-col items-center p-5 bg-green-50 hover:bg-primary rounded-2xl transition-all duration-200 border border-green-200 hover:border-primary text-center shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
-                  <span className="text-4xl mb-2 transition-transform duration-200 group-hover:scale-110">
-                    {scene.icon}
+                  <span className="mb-2 transition-transform duration-200 group-hover:scale-110">
+                    <img src={scene.iconSrc} alt="" className="w-8 h-8 inline-block" />
                   </span>
                   <span className="font-semibold text-sm text-gray-700 group-hover:text-white transition-colors">
                     {scene.label}
