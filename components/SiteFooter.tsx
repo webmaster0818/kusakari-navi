@@ -7,7 +7,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="font-bold text-lg mb-3 flex items-center gap-2">
-              <span>🌿</span> 草刈りナビ
+              <span></span> 草刈りナビ
             </h3>
             <p className="text-green-200 text-sm leading-relaxed">
               草刈り業者の料金比較・口コミ・おすすめランキングを掲載。あなたに最適な業者を見つけましょう。

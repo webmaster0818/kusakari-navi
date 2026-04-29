@@ -24,7 +24,7 @@ export default function RegularRankingPage() {
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">草刈り定期管理おすすめ業者ランキング</h1>
         <p className="text-gray-600 mb-3">年間を通じた定期的な草刈り管理に対応している業者のランキングです。</p>
         <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 text-sm text-green-800">
-          🔄 定期管理契約は1回あたりの費用が抑えられ、草が伸びすぎる前に管理できるためおすすめです
+           定期管理契約は1回あたりの費用が抑えられ、草が伸びすぎる前に管理できるためおすすめです
         </div>
 
         <div className="space-y-4 mb-8">
@@ -70,10 +70,10 @@ export default function RegularRankingPage() {
           <h2 className="text-lg font-bold text-gray-800 mb-4">定期管理契約のメリット</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             {[
-              { icon: "💰", title: "費用が割安", desc: "単発依頼より1回あたりの費用が安くなることが多い" },
-              { icon: "🗓️", title: "管理の手間が省ける", desc: "スケジュールを業者に管理してもらえる" },
-              { icon: "🌱", title: "草を短くキープ", desc: "伸びすぎる前に対応するため費用・手間を節約" },
-              { icon: "🤝", title: "優先対応", desc: "繁忙期でも優先的に対応してもらいやすい" },
+              { icon: "", title: "費用が割安", desc: "単発依頼より1回あたりの費用が安くなることが多い" },
+              { icon: "️", title: "管理の手間が省ける", desc: "スケジュールを業者に管理してもらえる" },
+              { icon: "", title: "草を短くキープ", desc: "伸びすぎる前に対応するため費用・手間を節約" },
+              { icon: "", title: "優先対応", desc: "繁忙期でも優先的に対応してもらいやすい" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
                 <span className="text-xl">{item.icon}</span>

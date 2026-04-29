@@ -26,8 +26,8 @@ export default function DiyVsProPage() {
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-4 py-3 text-left text-gray-600">比較項目</th>
-                  <th className="px-4 py-3 text-center text-green-600 font-bold">🔧 DIY</th>
-                  <th className="px-4 py-3 text-center text-blue-600 font-bold">👷 プロ業者</th>
+                  <th className="px-4 py-3 text-center text-green-600 font-bold"> DIY</th>
+                  <th className="px-4 py-3 text-center text-blue-600 font-bold"> プロ業者</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,7 +55,7 @@ export default function DiyVsProPage() {
         {/* When DIY */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-green-50 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-green-700 mb-4">🔧 DIYがおすすめな場合</h2>
+            <h2 className="text-xl font-bold text-green-700 mb-4"> DIYがおすすめな場合</h2>
             <ul className="space-y-3">
               {[
                 "面積が30㎡以下の小さな庭",
@@ -66,14 +66,14 @@ export default function DiyVsProPage() {
                 "道具を長期的に活用できる",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="text-green-500 mt-0.5">✓</span>{item}
+                  <span className="text-green-500 mt-0.5"></span>{item}
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="bg-blue-50 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-blue-700 mb-4">👷 プロ依頼がおすすめな場合</h2>
+            <h2 className="text-xl font-bold text-blue-700 mb-4"> プロ依頼がおすすめな場合</h2>
             <ul className="space-y-3">
               {[
                 "面積が100㎡以上の広い土地",
@@ -84,7 +84,7 @@ export default function DiyVsProPage() {
                 "きれいな仕上がりにこだわりたい",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="text-blue-500 mt-0.5">✓</span>{item}
+                  <span className="text-blue-500 mt-0.5"></span>{item}
                 </li>
               ))}
             </ul>
@@ -96,7 +96,7 @@ export default function DiyVsProPage() {
           <h2 className="text-xl font-bold text-gray-800 mb-4">5年間の総コスト比較（30㎡の庭・年2回草刈り）</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="border-2 border-green-300 rounded-xl p-4">
-              <h3 className="font-bold text-green-700 mb-3">🔧 DIYの場合</h3>
+              <h3 className="font-bold text-green-700 mb-3"> DIYの場合</h3>
               <table className="w-full text-sm">
                 <tbody>
                   {[
@@ -119,7 +119,7 @@ export default function DiyVsProPage() {
               <p className="text-xs text-gray-500 mt-2">※自分の労働時間（50時間以上）は含まない</p>
             </div>
             <div className="border-2 border-blue-300 rounded-xl p-4">
-              <h3 className="font-bold text-blue-700 mb-3">👷 プロ業者の場合</h3>
+              <h3 className="font-bold text-blue-700 mb-3"> プロ業者の場合</h3>
               <table className="w-full text-sm">
                 <tbody>
                   {[

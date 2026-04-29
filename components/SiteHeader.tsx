@@ -10,7 +10,7 @@ export default function SiteHeader() {
     <header className="bg-primary text-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl">🌿</span>
+          <span className="text-2xl"></span>
           <span className="font-bold text-xl tracking-tight">草刈りナビ</span>
           <span className="bg-accent text-white text-xs px-2 py-0.5 rounded-full font-bold ml-1">PR</span>
         </Link>

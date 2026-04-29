@@ -58,7 +58,7 @@ export default async function WeedPage({
 
         {/* Tips */}
         <div className="bg-green-50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-primary mb-4">💡 ポイント・注意事項</h2>
+          <h2 className="text-xl font-bold text-primary mb-4"> ポイント・注意事項</h2>
           <ul className="space-y-2">
             {weed.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">

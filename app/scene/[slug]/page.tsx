@@ -63,11 +63,11 @@ export default async function ScenePage({
 
         {/* Tips */}
         <div className="bg-secondary/10 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-secondary mb-4">💡 知っておくべきポイント</h2>
+          <h2 className="text-xl font-bold text-secondary mb-4"> 知っておくべきポイント</h2>
           <ul className="space-y-2">
             {scene.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-secondary mt-0.5 font-bold">✓</span>
+                <span className="text-secondary mt-0.5 font-bold"></span>
                 {tip}
               </li>
             ))}

@@ -63,11 +63,11 @@ export default async function CompanyPage({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Features */}
           <div className="bg-white rounded-xl shadow-sm p-5">
-            <h2 className="text-lg font-bold mb-3 text-gray-800">🌟 主な特徴</h2>
+            <h2 className="text-lg font-bold mb-3 text-gray-800"> 主な特徴</h2>
             <ul className="space-y-2">
               {company.features.map((f, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="text-primary mt-0.5">✓</span>
+                  <span className="text-primary mt-0.5"></span>
                   {f}
                 </li>
               ))}
@@ -77,7 +77,7 @@ export default async function CompanyPage({
           {/* Pros & Cons */}
           <div className="space-y-4">
             <div className="bg-green-50 rounded-xl p-5">
-              <h2 className="text-lg font-bold mb-3 text-green-700">👍 メリット</h2>
+              <h2 className="text-lg font-bold mb-3 text-green-700"> メリット</h2>
               <ul className="space-y-2">
                 {company.pros.map((p, i) => (
                   <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
@@ -88,7 +88,7 @@ export default async function CompanyPage({
               </ul>
             </div>
             <div className="bg-red-50 rounded-xl p-5">
-              <h2 className="text-lg font-bold mb-3 text-red-700">👎 デメリット</h2>
+              <h2 className="text-lg font-bold mb-3 text-red-700"> デメリット</h2>
               <ul className="space-y-2">
                 {company.cons.map((c, i) => (
                   <li key={i} className="text-sm text-gray-700 flex items-start gap-2">

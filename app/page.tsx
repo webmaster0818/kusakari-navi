@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 const top3Companies = companiesData.slice(0, 3);
 const scenes = [
-  { slug: "garden", label: "庭・自宅", icon: "🏡" },
-  { slug: "vacant-lot", label: "空き地", icon: "🌾" },
-  { slug: "vacant-house", label: "空き家", icon: "🏚️" },
-  { slug: "apartment", label: "アパート", icon: "🏢" },
-  { slug: "solar", label: "太陽光発電", icon: "☀️" },
+  { slug: "garden", label: "庭・自宅", icon: "" },
+  { slug: "vacant-lot", label: "空き地", icon: "" },
+  { slug: "vacant-house", label: "空き家", icon: "️" },
+  { slug: "apartment", label: "アパート", icon: "" },
+  { slug: "solar", label: "太陽光発電", icon: "️" },
 ];
 
 const faqs = [
@@ -73,13 +73,13 @@ export default function HomePage() {
                 href="/ranking/"
                 className="bg-accent hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
               >
-                🏆 おすすめランキングを見る
+                 おすすめランキングを見る
               </Link>
               <Link
                 href="/cost/price/"
                 className="bg-white/95 text-primary hover:bg-white px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
               >
-                💰 料金相場を確認する
+                 料金相場を確認する
               </Link>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function HomePage() {
         {/* TOP3 */}
         <section className="py-14 px-4 bg-bg">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">🏆 おすすめ草刈り業者 TOP3</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2"> おすすめ草刈り業者 TOP3</h2>
             <p className="text-gray-500 text-sm text-center mb-10">料金・対応エリア・口コミを総合評価</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {top3Companies.map((company, index) => (
@@ -124,7 +124,7 @@ export default function HomePage() {
                   <div
                     className={`absolute -top-3.5 left-1/2 -translate-x-1/2 ${rankColors[index].badge} text-white text-xs font-bold px-4 py-1.5 rounded-full shadow whitespace-nowrap`}
                   >
-                    ★ {rankColors[index].label}
+                     {rankColors[index].label}
                   </div>
 
                   {/* Rank number + name */}
@@ -184,7 +184,7 @@ export default function HomePage() {
         {/* Cost table */}
         <section className="py-14 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">💰 草刈り料金相場一覧</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2"> 草刈り料金相場一覧</h2>
             <p className="text-gray-500 text-sm text-center mb-8">面積別の費用目安（2026年最新版）</p>
             <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
               <table className="w-full text-sm border-collapse">
@@ -264,7 +264,7 @@ export default function HomePage() {
               href="/ranking/"
               className="bg-white text-accent hover:bg-red-50 px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 inline-block"
             >
-              🏆 おすすめ業者ランキングへ
+               おすすめ業者ランキングへ
             </Link>
           </div>
         </section>
