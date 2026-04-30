@@ -43,12 +43,19 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="border-t border-green-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-green-300 text-xs">
-            © 2026 草刈りナビ. All rights reserved.
-          </p>
-          <p className="text-green-400 text-xs">
-            ※当サイトはアフィリエイト広告を含みます。PRラベルのリンクは広告です。
-          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/terms/" className="text-green-300 text-xs hover:text-white transition-colors">利用規約</Link>
+            <Link href="/privacy/" className="text-green-300 text-xs hover:text-white transition-colors">プライバシーポリシー</Link>
+            <Link href="/content-policy/" className="text-green-300 text-xs hover:text-white transition-colors">記事の制作ポリシー</Link>
+          </div>
+          <div className="flex flex-col items-center md:items-end gap-1">
+            <p className="text-green-300 text-xs">
+              © 2026 草刈りナビ. All rights reserved.
+            </p>
+            <p className="text-green-400 text-xs">
+              ※当サイトはアフィリエイト広告を含みます。PRラベルのリンクは広告です。
+            </p>
+          </div>
         </div>
       </div>
     </footer>
