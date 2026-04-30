@@ -11,6 +11,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kusakari-navi.com"),
   title: {
     default: "草刈りナビ｜草刈り業者比較・料金・おすすめランキング",
     template: "%s｜草刈りナビ",
