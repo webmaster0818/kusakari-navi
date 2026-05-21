@@ -31,7 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-bg">{children}</body>
+      <body className="min-h-full flex flex-col bg-bg">{children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"草刈りナビ\",\"url\":\"https://kusakari-navi-deploy.pages.dev/\",\"logo\":\"https://kusakari-navi-deploy.pages.dev/favicon.ico\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"株式会社MediaX\",\"url\":\"https://mediax.biz\"},\"sameAs\":[\"https://kusakari-navi-deploy.pages.dev/about/\"]}" }}
+        />
+        </body>
     </html>
   );
 }
