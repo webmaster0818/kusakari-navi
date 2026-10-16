@@ -6,8 +6,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import companiesData from "@/data/companies.json";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ranking/cheap/" },
   title: "草刈り業者格安ランキング2026｜料金が安いおすすめ業者",
-  description: "草刈り業者を価格順にランキング。料金が安くてコスパの良い業者を厳選。無料見積もりで最安値を確認しましょう。",
+  description: "草刈り業者を料金の安い順に掲載したランキングです。費用を抑えたい方に向けて、料金水準の低い業者を紹介します。",
 };
 
 const cheapRanking = [...companiesData].sort((a, b) => a.pricePerSqm - b.pricePerSqm);
@@ -19,9 +20,9 @@ export default function CheapRankingPage() {
       <Breadcrumb items={[{ label: "ランキング", href: "/ranking/" }, { label: "格安ランキング" }]} />
       <main className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">草刈り業者 格安ランキング2026</h1>
-        <p className="text-gray-600 mb-3">料金の安さを重視した方向けのランキングです。1平方メートルあたりの単価順で並んでいます。</p>
+        <p className="text-gray-600 mb-3">料金の安さを重視する方向けのランキングです。1平方メートルあたりの単価が安い順に掲載しています。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6 text-sm text-yellow-800">
-           価格だけでなく、対応エリア・サービス品質も合わせて確認することをおすすめします
+           価格だけでなく、対応エリア・サービス品質もあわせて確認することをおすすめします
         </div>
 
         <div className="space-y-4">
@@ -63,12 +64,12 @@ export default function CheapRankingPage() {
         </div>
 
         <div className="mt-8 bg-white rounded-xl p-6 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">格安で草刈りを依頼するコツ</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-3">草刈りの費用を抑える方法</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li className="flex items-start gap-2"><span className="text-primary"></span>複数業者から相見積もりを取る</li>
-            <li className="flex items-start gap-2"><span className="text-primary"></span>繁忙期（夏）を避けて予約する</li>
-            <li className="flex items-start gap-2"><span className="text-primary"></span>草が短いうちに依頼する（作業量が少ない分安くなる）</li>
-            <li className="flex items-start gap-2"><span className="text-primary"></span>定期管理契約で単価を下げる</li>
+            <li className="flex items-start gap-2"><span className="text-primary"></span>複数の業者から相見積もりを取ります</li>
+            <li className="flex items-start gap-2"><span className="text-primary"></span>繁忙期（夏）を避けて予約します</li>
+            <li className="flex items-start gap-2"><span className="text-primary"></span>草が短いうちに依頼します（作業量が少ない分、費用が安くなります）</li>
+            <li className="flex items-start gap-2"><span className="text-primary"></span>定期管理契約により単価を下げます</li>
           </ul>
         </div>
       </main>

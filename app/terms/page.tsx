@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms/" },
   title: "利用規約",
   description: "草刈りナビの利用規約です。サービス概要、禁止事項、免責事項などについて定めています。",
 };

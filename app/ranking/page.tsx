@@ -6,8 +6,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import companiesData from "@/data/companies.json";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ranking/" },
   title: "草刈り業者おすすめランキング2026｜総合比較",
-  description: "草刈り業者を料金・対応力・口コミで総合ランキング。全国対応から地域密着まで、あなたの状況に最適な業者を見つけましょう。",
+  description: "草刈り業者を料金・対応力・口コミの観点から総合的に評価したランキングです。全国対応の業者から地域密着型の業者まで掲載しています。",
 };
 
 export default function RankingPage() {
@@ -17,7 +18,7 @@ export default function RankingPage() {
       <Breadcrumb items={[{ label: "おすすめランキング" }]} />
       <main className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">草刈り業者おすすめランキング2026</h1>
-        <p className="text-gray-600 mb-6">料金・対応エリア・口コミ評価を総合評価した最新ランキングです。</p>
+        <p className="text-gray-600 mb-6">料金・対応エリア・口コミ評価にもとづいて総合的に評価したランキングです。</p>
 
         {/* Sub ranking links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -25,14 +26,14 @@ export default function RankingPage() {
             <span className="text-2xl"></span>
             <div>
               <div className="font-bold">格安ランキング</div>
-              <div className="text-xs text-gray-600">コスパ重視で選ぶ</div>
+              <div className="text-xs text-gray-600">費用を重視する方向け</div>
             </div>
           </Link>
           <Link href="/ranking/regular/" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-xl p-4 flex items-center gap-3 transition-colors">
             <span className="text-2xl"></span>
             <div>
               <div className="font-bold text-primary">定期管理ランキング</div>
-              <div className="text-xs text-gray-600">定期依頼向け業者</div>
+              <div className="text-xs text-gray-600">定期的な依頼に適した業者</div>
             </div>
           </Link>
         </div>

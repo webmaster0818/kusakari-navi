@@ -19,8 +19,9 @@ export async function generateMetadata({
   const company = companiesData.find((c) => c.slug === slug);
   if (!company) return {};
   return {
+    alternates: { canonical: `/company/${slug}/` },
     title: `${company.name}の口コミ・評判・料金`,
-    description: `${company.name}の料金・特徴・メリット・デメリットを徹底解説。${company.tagline}`,
+    description: `${company.name}の料金・特徴・メリット・デメリットを解説します。${company.tagline}`,
   };
 }
 
@@ -104,7 +105,7 @@ export default async function CompanyPage({
         {/* CTA */}
         <div className="bg-accent text-white rounded-2xl p-6 text-center">
           <h2 className="text-xl font-bold mb-2">{company.name}に無料見積もりを依頼する</h2>
-          <p className="text-red-100 text-sm mb-4">今すぐ費用確認。複数業者と比較検討もおすすめ！</p>
+          <p className="text-red-100 text-sm mb-4">費用は見積もりでご確認ください。複数の業者との比較検討もおすすめします。</p>
           <a
             href={company.officialUrl}
             target="_blank"
@@ -116,7 +117,7 @@ export default async function CompanyPage({
         </div>
 
         <div className="mt-6 text-center">
-          <Link href="/ranking/" className="text-primary hover:underline">← 業者ランキング一覧に戻る</Link>
+          <Link href="/ranking/" className="text-primary hover:underline">← 業者ランキング一覧</Link>
         </div>
       </main>
       <SiteFooter />

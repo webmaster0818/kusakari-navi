@@ -20,6 +20,7 @@ export async function generateMetadata({
   const weed = weedsData.find((w) => w.slug === slug);
   if (!weed) return {};
   return {
+    alternates: { canonical: `/weed/${slug}/` },
     title: weed.title,
     description: weed.description,
   };
@@ -103,7 +104,7 @@ export default async function WeedPage({
         </div>
 
         <div className="text-center">
-          <Link href="/ranking/" className="text-primary hover:underline">← 業者ランキングを見る</Link>
+          <Link href="/ranking/" className="text-primary hover:underline">← 業者ランキング</Link>
         </div>
       </main>
       <SiteFooter />

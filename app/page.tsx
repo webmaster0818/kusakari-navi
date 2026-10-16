@@ -6,8 +6,9 @@ import SiteFooter from "@/components/SiteFooter";
 import companiesData from "@/data/companies.json";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   title: "草刈りナビ｜草刈り業者比較・料金・おすすめランキング2026",
-  description: "庭の雑草、もう悩まない。全国対応の草刈り業者を徹底比較。料金相場・口コミ・ランキングを掲載。無料見積もりで最安値を探しましょう。",
+  description: "全国の草刈り業者を比較する情報サイトです。料金相場・口コミ・ランキングを掲載し、庭や空き地の草刈りを依頼する際の業者選びを支援します。",
 };
 
 const top3Companies = companiesData.slice(0, 3);
@@ -20,14 +21,14 @@ const scenes = [
 ];
 
 const faqs = [
-  { q: "草刈り業者に頼む費用の相場はいくら？", a: "一般的な庭（30平方メートル）で約10,000〜25,000円が相場です。面積・草の高さ・廃棄物量によって変動します。複数業者の見積もり比較がおすすめです。" },
-  { q: "草刈りはどの季節に依頼すればいい？", a: "5〜6月と8〜9月の年2回が基本。草が伸びすぎる前に依頼すると費用を抑えられます。雑草が旺盛な夏は予約が込むため早めの予約を。" },
-  { q: "草刈りと除草の違いは？", a: "草刈りは草を刈り取る作業。除草は根ごと取り除く作業を指します。除草の方が再生を防げますが費用は高め。除草剤・防草シートとの組み合わせが効果的です。" },
-  { q: "DIYと業者どちらがいい？", a: "30平方メートル以下の庭ならDIYも選択肢。それ以上の面積や急傾斜・空き地の場合は業者への依頼が効率的です。道具代・時間・体力を考慮して判断を。" },
+  { q: "草刈りを業者に依頼する費用の相場はいくらですか？", a: "一般的な庭（30平方メートル）で約10,000〜25,000円が相場です。面積・草の高さ・廃棄物の量によって変動するため、複数の業者から見積もりを取って比較することをおすすめします。" },
+  { q: "草刈りはどの季節に依頼すればよいですか？", a: "5〜6月と8〜9月の年2回が基本です。草が伸びすぎる前に依頼すると、費用を抑えられます。雑草の成長が盛んな夏は予約が混み合うため、早めのご予約をおすすめします。" },
+  { q: "草刈りと除草の違いは何ですか？", a: "草刈りは草を刈り取る作業、除草は根ごと取り除く作業を指します。除草のほうが再生を防げますが、費用は高くなります。除草剤や防草シートとの組み合わせが効果的です。" },
+  { q: "DIYと業者への依頼では、どちらがよいですか？", a: "30平方メートル以下の庭であれば、DIYも選択肢となります。それ以上の面積や急傾斜地・空き地の場合は、業者への依頼が効率的です。道具代・時間・体力を考慮してご判断ください。" },
 ];
 
 const rankColors = [
-  { border: "border-yellow-400", badge: "bg-yellow-400", rank: "text-yellow-400", label: "No.1 編集部イチオシ" },
+  { border: "border-yellow-400", badge: "bg-yellow-400", rank: "text-yellow-400", label: "No.1 編集部のおすすめ" },
   { border: "border-gray-300", badge: "bg-gray-400", rank: "text-gray-400", label: "No.2" },
   { border: "border-amber-600", badge: "bg-amber-600", rank: "text-amber-600", label: "No.3" },
 ];
@@ -42,7 +43,7 @@ export default function HomePage() {
           {/* Background image */}
           <Image
             src="/images/hero-a.png"
-            alt="きれいに整備された芝生と青空"
+            alt="整備された芝生と青空"
             fill
             priority
             className="object-cover object-center"
@@ -62,11 +63,11 @@ export default function HomePage() {
               草刈り業者の総合比較サイト
             </p>
             <h1 className="text-4xl md:text-6xl font-black mb-5 leading-tight text-white drop-shadow-lg">
-              庭の雑草、もう悩まない。
+              草刈り業者の比較と料金相場
             </h1>
             <p className="text-green-100 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-              全国対応の草刈り・除草業者を徹底比較。<br className="hidden sm:block" />
-              料金相場・口コミ・ランキングで最適な業者を見つけましょう。
+              全国の草刈り・除草業者を比較しています。<br className="hidden sm:block" />
+              料金相場・口コミ・ランキングを掲載し、業者選びを支援します。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -89,7 +90,7 @@ export default function HomePage() {
         <section className="py-12 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">シーン別草刈りガイド</h2>
-            <p className="text-gray-500 text-sm text-center mb-8">お悩みのシーンから探す</p>
+            <p className="text-gray-500 text-sm text-center mb-8">ご利用のシーンから探す</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
               {scenes.map((scene) => (
                 <Link
@@ -113,7 +114,7 @@ export default function HomePage() {
         <section className="py-14 px-4 bg-bg">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2"> おすすめ草刈り業者 TOP3</h2>
-            <p className="text-gray-500 text-sm text-center mb-10">料金・対応エリア・口コミを総合評価</p>
+            <p className="text-gray-500 text-sm text-center mb-10">料金・対応エリア・口コミにもとづく総合評価</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {top3Companies.map((company, index) => (
                 <div
@@ -228,7 +229,7 @@ export default function HomePage() {
         <section className="py-14 px-4 bg-bg">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">よくある質問</h2>
-            <p className="text-gray-500 text-sm text-center mb-10">草刈りに関するお悩みにお答えします</p>
+            <p className="text-gray-500 text-sm text-center mb-10">草刈りに関するよくあるご質問にお答えします</p>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <div
@@ -256,9 +257,9 @@ export default function HomePage() {
         {/* CTA */}
         <section className="py-14 px-4 bg-accent text-white">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">今すぐ無料で見積もりを取る</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">無料見積もりのご案内</h2>
             <p className="text-red-100 mb-8 text-sm md:text-base">
-              複数業者の見積もりを比較して、最安値の業者を見つけましょう
+              複数の業者から見積もりを取り、料金と内容を比較することをおすすめします
             </p>
             <Link
               href="/ranking/"

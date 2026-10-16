@@ -5,8 +5,9 @@ import SiteFooter from "@/components/SiteFooter";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cost/price/" },
   title: "草刈り料金・費用相場2026｜面積別・地域別の目安",
-  description: "草刈りの料金・費用相場を面積別・地域別に詳しく解説。業者選びと見積もりのコツも紹介します。",
+  description: "草刈りの料金・費用相場を面積別・地域別に解説します。業者選びと見積もりのポイントも紹介します。",
 };
 
 const priceTable = [
@@ -36,7 +37,7 @@ export default function PricePage() {
       <main className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">草刈り料金・費用相場2026年最新版</h1>
         <p className="text-gray-600 mb-8 leading-relaxed">
-          草刈りの費用は面積・草の高さ・廃棄物の量・地域によって大きく異なります。このページでは面積別の料金目安と、費用を抑えるコツを解説します。
+          草刈りの費用は、面積・草の高さ・廃棄物の量・地域によって大きく異なります。本ページでは、面積別の料金の目安と、費用を抑える方法を解説します。
         </p>
 
         {/* Main price table */}
@@ -64,7 +65,7 @@ export default function PricePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-500 mt-3">※草の高さ30cm以下・廃棄物処分別の目安です。実際は現地見積もりで確認しましょう。</p>
+          <p className="text-xs text-gray-500 mt-3">※草の高さ30cm以下・廃棄物の処分費用を含まない場合の目安です。実際の金額は、現地での見積もりにてご確認ください。</p>
         </div>
 
         {/* Add-ons */}
@@ -85,10 +86,10 @@ export default function PricePage() {
           <h2 className="text-xl font-bold text-gray-800 mb-4">料金が変わる主な要因</h2>
           <div className="space-y-4">
             {[
-              { factor: "草の高さ・密度", detail: "草が50cm以上の場合、刈り取りに時間がかかり割増になることが多い。定期管理で草を短く保つと費用を抑えられる。" },
-              { factor: "廃棄物の量", detail: "刈り取った草の処分費用は別途かかることが多い。45Lのゴミ袋1袋あたり500〜1,000円が目安。" },
-              { factor: "アクセスのしやすさ", detail: "急傾斜地や重機が入りにくい場所は割増になる。駐車スペースの有無も影響する。" },
-              { factor: "地域・季節", detail: "都市部は人件費が高め。夏の繁忙期（7〜9月）は予約が取りにくく割増になる場合も。" },
+              { factor: "草の高さ・密度", detail: "草が50cm以上の場合は刈り取りに時間がかかるため、割増になることが多くあります。定期的な管理により草を短く保つと、費用を抑えられます。" },
+              { factor: "廃棄物の量", detail: "刈り取った草の処分費用は、別途かかることが多くあります。45Lのごみ袋1袋あたり500〜1,000円が目安です。" },
+              { factor: "アクセスのしやすさ", detail: "急傾斜地や重機が入りにくい場所は割増になります。駐車スペースの有無も料金に影響します。" },
+              { factor: "地域・季節", detail: "都市部は人件費が高い傾向にあります。夏の繁忙期（7〜9月）は予約が取りにくく、割増になる場合もあります。" },
             ].map((item, i) => (
               <div key={i} className="border-l-4 border-primary pl-4">
                 <h3 className="font-bold text-gray-800 mb-1">{item.factor}</h3>
@@ -100,14 +101,14 @@ export default function PricePage() {
 
         {/* Tips */}
         <div className="bg-primary/5 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-primary mb-4">費用を抑える5つのコツ</h2>
+          <h2 className="text-xl font-bold text-primary mb-4">費用を抑える5つの方法</h2>
           <ol className="space-y-3">
             {[
-              "複数業者から相見積もりを取る（最大30〜50%節約可能）",
-              "繁忙期（7〜9月）を避けて5〜6月や10月頃に依頼する",
-              "草が短いうちに定期管理を始める",
-              "廃棄物を自分で処分してコストを下げる",
-              "定期管理契約でまとめて依頼する",
+              "複数の業者から相見積もりを取ります（最大30〜50%の節約が見込めます）",
+              "繁忙期（7〜9月）を避け、5〜6月や10月頃に依頼します",
+              "草が短いうちに定期管理を始めます",
+              "廃棄物をご自身で処分して費用を抑えます",
+              "定期管理契約でまとめて依頼します",
             ].map((tip, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
                 <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">{i + 1}</span>
@@ -124,8 +125,8 @@ export default function PricePage() {
         </div>
 
         <div className="mt-6 flex gap-4 justify-center text-sm">
-          <Link href="/cost/diy-vs-pro/" className="text-primary hover:underline">DIY vs 業者の比較を見る →</Link>
-          <Link href="/ranking/" className="text-primary hover:underline">業者ランキングを見る →</Link>
+          <Link href="/cost/diy-vs-pro/" className="text-primary hover:underline">DIYと業者の比較 →</Link>
+          <Link href="/ranking/" className="text-primary hover:underline">業者ランキング →</Link>
         </div>
       </main>
       <SiteFooter />

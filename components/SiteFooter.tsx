@@ -10,7 +10,7 @@ export default function SiteFooter() {
               <span></span> 草刈りナビ
             </h3>
             <p className="text-green-200 text-sm leading-relaxed">
-              草刈り業者の料金比較・口コミ・おすすめランキングを掲載。あなたに最適な業者を見つけましょう。
+              草刈り業者の料金・口コミ・おすすめランキングを掲載し、業者選びを支援する情報サイトです。
             </p>
           </div>
           <div>
@@ -37,8 +37,12 @@ export default function SiteFooter() {
               <li><Link href="/weed/types/" className="hover:text-white transition-colors">雑草の種類</Link></li>
               <li><Link href="/weed/herbicide/" className="hover:text-white transition-colors">除草剤の使い方</Link></li>
               <li><Link href="/weed/sheet/" className="hover:text-white transition-colors">防草シート</Link></li>
+              <li><Link href="/weed/gravel/" className="hover:text-white transition-colors">砂利敷き</Link></li>
+              <li><Link href="/weed/concrete/" className="hover:text-white transition-colors">コンクリート舗装</Link></li>
+              <li><Link href="/weed/ground-cover/" className="hover:text-white transition-colors">グランドカバー</Link></li>
+              <li><Link href="/weed/permanent/" className="hover:text-white transition-colors">長期的な雑草対策</Link></li>
               <li><Link href="/cost/price/" className="hover:text-white transition-colors">料金・費用相場</Link></li>
-              <li><Link href="/cost/diy-vs-pro/" className="hover:text-white transition-colors">DIY vs プロ比較</Link></li>
+              <li><Link href="/cost/diy-vs-pro/" className="hover:text-white transition-colors">DIYと業者の比較</Link></li>
             </ul>
           </div>
         </div>
@@ -47,6 +51,7 @@ export default function SiteFooter() {
             <Link href="/terms/" className="text-green-300 text-xs hover:text-white transition-colors">利用規約</Link>
             <Link href="/privacy/" className="text-green-300 text-xs hover:text-white transition-colors">プライバシーポリシー</Link>
             <Link href="/content-policy/" className="text-green-300 text-xs hover:text-white transition-colors">記事の制作ポリシー</Link>
+            <Link href="/about/" className="text-green-300 text-xs hover:text-white transition-colors">運営者情報</Link>
           </div>
           <div className="flex flex-col items-center md:items-end gap-1">
             <p className="text-green-300 text-xs">

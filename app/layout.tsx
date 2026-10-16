@@ -12,7 +12,6 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kusakari-navi.com"),
-  alternates: { canonical: "/" },
   twitter: {
     card: "summary_large_image",
   },
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
     default: "草刈りナビ｜草刈り業者比較・料金・おすすめランキング",
     template: "%s｜草刈りナビ",
   },
-  description: "草刈り業者の料金比較・口コミ・おすすめランキングを掲載。空き地・庭・アパートなどシーン別に最適な業者を紹介。無料見積もり対応。",
+  description: "草刈り業者の料金比較・口コミ・おすすめランキングを掲載しています。空き地・庭・アパートなど、シーン別に適した業者を紹介します。",
   keywords: ["草刈り", "業者", "料金", "比較", "ランキング", "庭", "雑草"],
 };
 

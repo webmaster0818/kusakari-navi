@@ -31,4 +31,5 @@
   <url><loc>https://kusakari-navi.com/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://kusakari-navi.com/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://kusakari-navi.com/content-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://kusakari-navi.com/about/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

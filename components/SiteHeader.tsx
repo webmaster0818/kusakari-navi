@@ -19,7 +19,7 @@ export default function SiteHeader() {
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="/ranking/" className="hover:text-yellow-200 transition-colors">ランキング</Link>
           <Link href="/cost/price/" className="hover:text-yellow-200 transition-colors">料金相場</Link>
-          <Link href="/cost/diy-vs-pro/" className="hover:text-yellow-200 transition-colors">DIY vs 業者</Link>
+          <Link href="/cost/diy-vs-pro/" className="hover:text-yellow-200 transition-colors">DIYと業者の比較</Link>
           <Link href="/weed/types/" className="hover:text-yellow-200 transition-colors">雑草対策</Link>
           <Link
             href="/ranking/"
@@ -48,7 +48,7 @@ export default function SiteHeader() {
             <Link href="/ranking/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>ランキング</Link>
             <Link href="/ranking/cheap/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>格安ランキング</Link>
             <Link href="/cost/price/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>料金相場</Link>
-            <Link href="/cost/diy-vs-pro/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>DIY vs 業者</Link>
+            <Link href="/cost/diy-vs-pro/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>DIYと業者の比較</Link>
             <Link href="/weed/types/" className="hover:text-yellow-200 py-1 border-b border-green-700" onClick={() => setMenuOpen(false)}>雑草の種類</Link>
             <Link href="/scene/garden/" className="hover:text-yellow-200 py-1" onClick={() => setMenuOpen(false)}>庭の草刈り</Link>
             <Link

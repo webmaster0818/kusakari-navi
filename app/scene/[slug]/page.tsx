@@ -20,6 +20,7 @@ export async function generateMetadata({
   const scene = scenesData.find((s) => s.slug === slug);
   if (!scene) return {};
   return {
+    alternates: { canonical: `/scene/${slug}/` },
     title: scene.title,
     description: scene.description,
   };
@@ -63,7 +64,7 @@ export default async function ScenePage({
 
         {/* Tips */}
         <div className="bg-secondary/10 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-secondary mb-4"> 知っておくべきポイント</h2>
+          <h2 className="text-xl font-bold text-secondary mb-4"> 押さえておくべきポイント</h2>
           <ul className="space-y-2">
             {scene.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
@@ -89,7 +90,7 @@ export default async function ScenePage({
 
         {/* Recommended companies */}
         <div className="mb-8">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">このシーンにおすすめの業者</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">このシーンに適した業者</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {relatedCompanies.map((company, index) => (
               <div key={company.slug} className="bg-white rounded-xl shadow-sm p-4 border border-green-100">
@@ -111,7 +112,7 @@ export default async function ScenePage({
         </div>
 
         <div className="text-center">
-          <Link href="/ranking/" className="text-primary hover:underline">← 全業者ランキングを見る</Link>
+          <Link href="/ranking/" className="text-primary hover:underline">← 全業者のランキング</Link>
         </div>
       </main>
       <SiteFooter />
